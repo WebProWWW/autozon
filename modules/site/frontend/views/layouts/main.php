@@ -13,6 +13,13 @@ use yii\helpers\Url;
 
 $baseUrl = Url::base(true);
 
+$this->registerJsVar('app', [
+    'csrf' => [
+        'param' => Yii::$app->request->csrfParam,
+        'token' => Yii::$app->request->csrfToken,
+    ],
+]);
+
 ?>
 <?php $this->beginPage(); ?>
 <!DOCTYPE html>
